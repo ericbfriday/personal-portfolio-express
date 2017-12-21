@@ -1,6 +1,8 @@
 .jshintrc
 .jslintrc
 .eslintrc
+.env
+
 
 # OS
 # ===========
