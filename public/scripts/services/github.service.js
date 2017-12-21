@@ -12,6 +12,8 @@ myApp.service('GithubService', function ($http) {
     }).then(function (response) {
       // console.log(response.data);
       self.user.data = response.data;
+    }).catch((err)=> {
+      console.log(err);
     });
   }
 
@@ -25,6 +27,8 @@ myApp.service('GithubService', function ($http) {
     }).then(function (response) {
       // console.log(response.data);
       self.repos.data = response.data;
+    }).catch((err)=> {
+      console.log(err);
     });
   }
 });
