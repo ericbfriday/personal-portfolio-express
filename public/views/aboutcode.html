@@ -1,18 +1,56 @@
-<div ng-controller="CodeController as cc" ng-cloak ng-init="cc.tileMaker()">
-    <md-content layout-padding>
-        <md-grid-list md-cols-gt-md="12" md-cols="3" md-cols-md="8" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="16px"
-            md-gutter-md="8px" md-gutter="4px" ng-init="cc.tileCombiner(cc.repos, cc.gridTiles)">
-            <md-grid-tile class="repoTiles md-whiteframe-5dp" layout="row" layout-align="center center" ng-repeat="repo in cc.combinedTiles.data | orderBy : '-created_at'"
-                style="background-color: {{repo.color}};" md-colspan-gt-sm="{{repo.colspan}}" md-rowspan-gt-sm="{{repo.rowspan}}"
-                layout-wrap>
-                <a ng-href="{{repo.html_url}}" style="text-decoration: none; color: black;">
-                    <div class="parent" style="text-align: center;">
-                        <img class="githubImage" src="/images/github-large.png" alt="View on Github">
-                        <h1>{{repo.name}}</h1>
-                        <p>{{repo.description}}</p>
-                    </div>
-                </a>
-            </md-grid-tile>
-        </md-grid-list>
-    </md-content>
-</div>
+<section>
+  <div layout="row">
+    <div layout="column" layout-fill layout="center center" flex="10"></div>
+    <div layout="column" layout-fill layout="center center" flex="80">
+      <md-content layout-padding>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline grayfont">Speech Builder</span>
+              <span class="md-subhead grayfont">A speech therapy application designed to bring together curated word lists with visually appealing reporting.</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content layout="column">
+            <div layout="row">
+              <div flex=50 class="md-padding"><img class="aboutCodeImg" ng-src="/images/speech-builder/landing-page.png"></div>
+              <div flex=50 class="md-padding"><img class="aboutCodeImg" ng-src="/images/speech-builder/report-chart.png"></div>
+            </div>
+            <div layout="row">
+              <div flex=50 class="md-padding"><img class="aboutCodeImg" ng-src="/images/speech-builder/word-list.png"></div>
+              <div flex=50 class="md-padding"><img class="aboutCodeImg" ng-src="/images/speech-builder/word-list-popup.png"></div>
+            </div>
+            <span class="grayfont">Underlying Technology: SEAN Stack (SQL, Express, Angular, Node), Angular Material, Charts.js/Angular-Charts, Git, and Firebase (auth). </span>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button class="grayfont" ng-href="http://github.com/ericbfriday/speech-builder/">View On Github</md-button>
+            <md-button class="grayfont" ng-href="http://speech-builder.herokuapp.com">View The Website</md-button>
+          </md-card-actions>
+        </md-card>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline grayfont">MusicNerdz</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content layout="row" layout-fill>
+            <div flex=40 class="md-padding"><img class="aboutCodeImg" ng-src="/images/musicnerdz/student/image4.png"></div>
+            <div flex=60 class="md-padding">
+              <span class="md-subhead grayfont">Disrupting education with an engaging mix of music and history. MusicNerdz finds the convergence of contemporary music with the historical contexts that create the world we live in. By using visually appealing graphics, a simple interface, and relevant songs, we're able to engage students to learn more. </span>
+              <br/>
+              <br/>
+              <span class="md-subhead grayfont">Underlying Technology: SEAN Stack (SQL, Express, Angular, Node), Angular Material, Passport (auth), Sass, and Git. </span>
+              <div layout="row" layout-align="center bottom">
+                <div flex=50 class="md-padding"><img class="aboutCodeImg" ng-src="/images/musicnerdz/student/image5.png"></div>
+                <div flex=50 class="md-padding"><img class="aboutCodeImg" ng-src="/images/musicnerdz/student/image10.png"></div>
+              </div>
+            </div>
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button class="grayfont" ng-href="http://github.com/ericbfriday/musicnerdz/">View On Github</md-button>
+            <!-- <md-button ng-href="http://www.musicnerdz.com">View The Website</md-button> -->
+          </md-card-actions>
+        </md-card>
+      </md-content>
+    </div>
+    <div layout="column" layout-fill layout="center center" flex="10"></div>
+</section>

@@ -1,6 +1,5 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'NavBar', 'CodeTiles']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngMaterial', 'NavBar']);
 
-/// Routes ///
 myApp.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
   $locationProvider.hashPrefix('');
 
