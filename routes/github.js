@@ -1,30 +1,32 @@
-const express = require('express');
-const request = require('request');
+'use strict';
 
-const router = express.Router();
-const username = process.env.USER_NAME;
-const oauthToken = process.env.GIT_TOKEN;
+var express = require('express');
+var request = require('request');
+
+var router = express.Router();
+var username = process.env.USER_NAME;
+var oauthToken = process.env.GIT_TOKEN;
 require('dotenv').config();
 
-const userOptions = {
+var userOptions = {
   url: 'https://api.github.com/users/' + username,
   headers: {
     'User-Agent': 'request',
     'Authorization': 'token ' + oauthToken
-  },
+  }
 };
 
-const repoOptions = {
+var repoOptions = {
   url: 'https://api.github.com/users/' + username + '/repos',
   headers: {
     'User-Agent': 'request',
     'Authorization': 'token ' + oauthToken
-  },
+  }
 };
 
-router.get('/user', (req, res) => {
+router.get('/user', function (req, res) {
   console.log('inside /user');
-  request(userOptions, (error, response, body) => {
+  request(userOptions, function (error, response, body) {
     if (response && response.statusCode === 200) {
       res.send(body);
     } else {
@@ -34,9 +36,9 @@ router.get('/user', (req, res) => {
   });
 });
 
-router.get('/repos', (req, res) => {
+router.get('/repos', function (req, res) {
   console.log('inside /repos');
-  request(repoOptions, (error, response, body) => {
+  request(repoOptions, function (error, response, body) {
     if (response && response.statusCode === 200) {
       res.send(body);
     } else {
